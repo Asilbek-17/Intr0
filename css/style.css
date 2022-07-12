@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: "Inter";
     font-weight: 400;
@@ -31,7 +38,8 @@
   }
 
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -52,8 +60,12 @@ body {
 }
 
 .hero-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .start-box {
@@ -119,6 +131,8 @@ body {
 .end-box {
     background: #FFFFFF;
     border-radius: 20px;
+    padding-top: 42px;
+    padding-right: 60px;
     padding-left: 60px;
     padding-bottom: 35px;
 }
@@ -127,20 +141,50 @@ body {
     font-size: 32px;
     line-height: 42px;
     color: #000000;
+    margin: 0;
     margin-bottom: 44px;
 }
+
 
 .end-inp {
     width: 450px;
     border: none;
     border-bottom: 1px solid #555555;
-    padding-top: 35px;
-    padding-bottom: 14px;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
     color: #000000;
     outline: none;
+    margin-bottom: 4px;
+    padding-bottom: 14px;
+}
+
+.end-inp::-webkit-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #555555;
+}
+
+.end-inp::-moz-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #555555;
+}
+
+.end-inp:-ms-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #555555;
+}
+
+.end-inp::-ms-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #555555;
 }
 
 .end-inp::placeholder {
@@ -148,6 +192,41 @@ body {
     font-size: 16px;
     line-height: 19px;
     color: #555555;
+}
+
+.end-inp:not(:-moz-placeholder-shown):not(:focus):invalid {
+    border-bottom-color: #F03535;
+}
+
+.end-inp:not(:-ms-input-placeholder):not(:focus):invalid {
+    border-bottom-color: #F03535;
+}
+
+.end-inp:not(:placeholder-shown):not(:focus):invalid {
+    border-bottom-color: #F03535;
+}
+
+.end-inp:not(:-moz-placeholder-shown):not(:focus):invalid + .invalid-text {
+    opacity: 1;
+}
+
+.end-inp:not(:-ms-input-placeholder):not(:focus):invalid + .invalid-text {
+    opacity: 1;
+}
+
+.end-inp:not(:placeholder-shown):not(:focus):invalid + .invalid-text {
+    opacity: 1;
+}
+
+.invalid-text {
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+    color: #F03535;
+    margin-bottom: 18px;
+    opacity: 0;
 }
 
 .end-btn {
@@ -164,6 +243,7 @@ body {
     border-radius: 10px;
     margin-top: 60px;
     padding: 20px 0;
+    cursor: pointer;
 }
 
 .end-text {
@@ -174,7 +254,7 @@ body {
     color: #555555;
 }
 
-.end-span {
+.end-link {
     font-weight: 500;
     color: #F03535;
 }
